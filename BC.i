@@ -7,7 +7,7 @@
 class BC {
  public:
 
-  BC(bool legacySubclass);
+  BC(legacySubclass = false);
   bool bcsImposed(int varID);
   bool singlePointBC(int varID);
   double valueForSinglePointBC(int varID);
