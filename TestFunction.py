@@ -26,7 +26,11 @@ class TestFunction(unittest.TestCase):
 
     """ Test displayString()"""
     def testDisplayString(self):
+<<<<<<< HEAD
 	self.assertEqual("x",Function.vectorize(x, 0)->x()->displayString())
+=======
+	self.assertEqual("x",Function.vectorize(x, 0)->displayString())
+>>>>>>> e119347caf1c3329a29d573939ae0caf298c16d7
 
     """ Test composedFunction(), constant(), normal(), solution(), xn(), yn() """
     def testEval(self):
