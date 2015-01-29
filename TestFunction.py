@@ -17,7 +17,7 @@ class TestFunction(unittest.TestCase):
         self.assertEqual(1, Function.vectorize(x,y)->rank())
     """ Test displayString()"""
     def testDisplayString(self):
-	self.assertEqual("x",Function.vectorize(2x, 0)->displayString())
+	self.assertEqual("x",Function.vectorize(x, 0)->displayString())
 
     """ Test evaluate(),composedFunction(), constant(), vectorize(), normal(), solution() """
     def testEval(self):
