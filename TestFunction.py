@@ -26,7 +26,7 @@ class TestFunction(unittest.TestCase):
 
     """ Test 12norm() """
     def testNorm(self):
-        self.assertAlmostEqual(Function.l2norm(Mesh. ), ,delta = 1e-12) 
+        self.assertAlmostEqual(Function.l2norm(MeshPtr), double ,delta = 1e-12) 
 
     """ Test displayString()"""
     def testDisplayString(self):
