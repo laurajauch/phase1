@@ -1,6 +1,8 @@
 import BC
 import Var
 import VarFactory
+import SpatialFilter
+import Function
 import unittest
 
 
@@ -21,5 +23,5 @@ class TestBC(unittest.TestCase):
         
     def testDirichlet(self):    
         """addDirichlet, getDirichletBC, getSpatiallyFilteredFunctionForDirichletBC"""
-        self.assertTrue(BC.addDirchlet(things, , ).something() )
+        self.assertTrue(BC.addDirchlet(VarFactory.fluxVar("pizza"),SpatialFilter.lessThanX(12.0), Function.xn(4)).something())
         
