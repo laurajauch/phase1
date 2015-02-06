@@ -60,5 +60,10 @@ class Function{
   static FunctionPtr solution(VarPtr var, SolutionPtr soln);
   static FunctionPtr xn(int n=1);
   static FunctionPtr yn(int n=1);
+  %extend {
+     std::string __str__() {
+       return self->displayString();
+     }
+  }
 
 }
