@@ -50,7 +50,5 @@ class TestFunction(unittest.TestCase):
         self.assertAlmostEqual(3, Function.Function_xn(1).evaluate(3, 2), delta=1e-12)
         self.assertAlmostEqual(2, Function.Function_yn(1).evaluate(3, 2), delta=1e-12)
         self.assertAlmostEqual(12, Function.Function_constant(12).evaluate(2, 2), delta = 1e-12)
-        
         # Problem?
         #self.assertAlmostEqual(4, Function.Function_composedFunction(y1, x1).evaluate(2, 0),delta=1e-12)
-
