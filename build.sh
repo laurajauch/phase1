@@ -24,9 +24,9 @@ LINK_ALL="-lpython2.7 -L$Trilinos_LIBRARY_DIRS $Trilinos_LIBRARIES_LINK_LINE -L$
 #$CPP -c -Wall -fpic VarFactory_wrap.cxx $INCLUDE_ALL
 #$CPP -shared VarFactory_wrap.o -o _VarFactory.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Function.i
-#$CPP -c -Wall -fpic Function_wrap.cxx $INCLUDE_ALL
-#$CPP -shared Function_wrap.o -o _Function.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Function.i
+$CPP -c -Wall -fpic Function_wrap.cxx $INCLUDE_ALL
+$CPP -shared Function_wrap.o -o _Function.so $LINK_ALL
 
 #swig -Wall -c++ -python -I$CAMELLIA_INCLUDE LinearTerm.i
 #$CPP -c -Wall -fpic LinearTerm_wrap.cxx $INCLUDE_ALL
@@ -40,13 +40,13 @@ LINK_ALL="-lpython2.7 -L$Trilinos_LIBRARY_DIRS $Trilinos_LIBRARIES_LINK_LINE -L$
 #$CPP -c -Wall -fpic BF_wrap.cxx $INCLUDE_ALL
 #$CPP -shared BF_wrap.o -o _BF.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE SpatialFilter.i
-#$CPP -c -Wall -fpic SpatialFilter_wrap.cxx $INCLUDE_ALL
-#$CPP -shared SpatialFilter_wrap.o -o _SpatialFilter.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE SpatialFilter.i
+$CPP -c -Wall -fpic SpatialFilter_wrap.cxx $INCLUDE_ALL
+$CPP -shared SpatialFilter_wrap.o -o _SpatialFilter.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE BC.i
-#$CPP -c -Wall -fpic BC_wrap.cxx $INCLUDE_ALL
-#$CPP -shared BC_wrap.o -o _BC.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE BC.i
+$CPP -c -Wall -fpic BC_wrap.cxx $INCLUDE_ALL
+$CPP -shared BC_wrap.o -o _BC.so $LINK_ALL
 
 #swig -Wall -c++ -python -I$CAMELLIA_INCLUDE RHS.i
 #$CPP -c -Wall -fpic RHS_wrap.cxx $INCLUDE_ALL

@@ -61,4 +61,4 @@ class Function{
   static FunctionPtr xn(int n=1);
   static FunctionPtr yn(int n=1);
 
-};
+}
