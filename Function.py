@@ -190,6 +190,7 @@ class FunctionPtr(_object):
     def solution(self, *args): return _Function.FunctionPtr_solution(self, *args)
     def xn(self, n=1): return _Function.FunctionPtr_xn(self, n)
     def yn(self, n=1): return _Function.FunctionPtr_yn(self, n)
+    def __str__(self): return _Function.FunctionPtr___str__(self)
 FunctionPtr_swigregister = _Function.FunctionPtr_swigregister
 FunctionPtr_swigregister(FunctionPtr)
 
@@ -224,6 +225,7 @@ class Function(_object):
     if _newclass:xn = staticmethod(_Function.Function_xn)
     __swig_getmethods__["yn"] = lambda x: _Function.Function_yn
     if _newclass:yn = staticmethod(_Function.Function_yn)
+    def __str__(self): return _Function.Function___str__(self)
     __swig_destroy__ = _Function.delete_Function
     __del__ = lambda self : None;
 Function_swigregister = _Function.Function_swigregister
