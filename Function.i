@@ -51,7 +51,7 @@ class Function{
   FunctionPtr grad();
   int rank();
   double l2norm(MeshPtr mesh, int cubatureDegreeEnrichment = 0);
-  string displayString();
+  std::string displayString();
   double evaluate(double x, double y);
   static FunctionPtr composedFunction( FunctionPtr f, FunctionPtr arg g);
   static FunctionPtr constant(double value);
