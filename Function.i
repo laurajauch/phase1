@@ -6,6 +6,7 @@
 %include "std_string.i"
 %include "std_vector.i"
 %nodefaultctor Function;
+%include "Mesh.i"
 
 class FunctionPtr {
  public:
