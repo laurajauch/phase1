@@ -1,25 +1,25 @@
 import BC
-#import Var
-#import VarFactory
+import Var
+import VarFactory
 import SpatialFilter
 import Function
 import unittest
 
-vf = VarFactory.VarFactory_VarFactory()
-fv.testVar("test", fs = L2)
+boundary = BC.BC_bc()
+vf = VarFactory.VarFactory();
 
 class TestBC(unittest.TestCase):
     """ test BC()"""
     def testBoundCond(self):
-        #self.assertFalse(BC.BC_bcsImposed(1))
-        pass
+        self.assertFalse(boundary.bcsImposed(1))
         
-    def testSinglePoint(self):    
-        #self.assertTrue(BC.addSinglePointBC(17, 0.0).singlePointBC(17))
-        #self.assertTrue(BC.bcsImposed(17))
+    def testSinglePoint(self):
+        boundary.addSinglePointBC(17, 0.0)    
+        self.assertTrue(boundary.singlePointBC(17))
+        #self.assertTrue(boundary.bcsImposed(17))
         #self.assertAlmostEqual(BC.valueForSinglePointBC, 0.0, delta = 1e-12)
         #self.assertAlmostEqual(BC.vertexForSinglePointBC(17), -1, delta = 1e-12)
-        pass
+        #pass
         
     def testZeroMean(self):    
         #self.assertTrue(BC.addZeroMeanConstaint(VarPtr Field).imposeZeroMeanConstarint(varID))
