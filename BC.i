@@ -12,8 +12,8 @@
 class BC {
  public:
 
-  BC(bool legacySubclass=false);
-  
+  #BC();
+  BCPtr bc();
   bool bcsImposed(int varID);
   bool singlePointBC(int varID);
   double valueForSinglePointBC(int varID);
