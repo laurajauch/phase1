@@ -4,7 +4,9 @@
   %}
 
 %include "std_string.i"
+%include "std_vector.i"
 %nodefaultctor Function;
+%include "Mesh.i"
 
 class FunctionPtr {
  public:
@@ -49,7 +51,7 @@ class Function{
   FunctionPtr grad();
   int rank();
   double l2norm(MeshPtr mesh, int cubatureDegreeEnrichment = 0);
-  string displayString();
+  std::string displayString();
   double evaluate(double x, double y);
   static FunctionPtr composedFunction( FunctionPtr f, FunctionPtr arg g);
   static FunctionPtr constant(double value);
@@ -58,5 +60,10 @@ class Function{
   static FunctionPtr solution(VarPtr var, SolutionPtr soln);
   static FunctionPtr xn(int n=1);
   static FunctionPtr yn(int n=1);
+  %extend {
+     std::string __str__() {
+       return self->displayString();
+     }
+  }
 
 }
