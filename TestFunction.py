@@ -22,12 +22,11 @@ class TestFunction(unittest.TestCase):
     def testCalc(self):
         self.assertAlmostEqual(0,Function.Function_constant(2).dx().evaluate(1,2),delta=1e-12)
         self.assertAlmostEqual(0,Function.Function_constant(2).dy().evaluate(1,2),delta=1e-12)
-        
-        # problem?
-        #self.assertAlmostEqual(0,Function.Function_constant(9).div().evaluate(1,2),delta=1e-12)
+        v = Function.Function_vectorize(z , z)
+        self.assertAlmostEqual(0.0, v.div().evaluate(1,2),delta=1e-12)
         
         # problem? 
-        #self.assertAlmostEqual(0,Function.Function_constant(9).grad().evaluate(1,2),delta=1e-12)
+        #self.assertAlmostEqual(0.0, v.grad().evaluate(1,2), delta = 1e-12)
 
     """ Test rank() """
     def testRank(self):
@@ -51,4 +50,4 @@ class TestFunction(unittest.TestCase):
         self.assertAlmostEqual(2, Function.Function_yn(1).evaluate(3, 2), delta=1e-12)
         self.assertAlmostEqual(12, Function.Function_constant(12).evaluate(2, 2), delta = 1e-12)
         # Problem?
-        #self.assertAlmostEqual(4, Function.Function_composedFunction(y1, x1).evaluate(2, 0),delta=1e-12)
+        #self.assertAlmostEqual(16.0, Function.Function_composedFunction(x1, x1).evaluate(2, 0),delta=1e-12)
