@@ -74,11 +74,9 @@ class BC(_object):
     __setattr__ = lambda self, name, value: _swig_setattr(self, BC, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, BC, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    def __init__(self, legacySubclass=False): 
-        this = _BC.new_BC(legacySubclass)
-        try: self.this.append(this)
-        except: self.this = this
+    def bc(self): return _BC.BC_bc(self)
     def bcsImposed(self, *args): return _BC.BC_bcsImposed(self, *args)
     def singlePointBC(self, *args): return _BC.BC_singlePointBC(self, *args)
     def valueForSinglePointBC(self, *args): return _BC.BC_valueForSinglePointBC(self, *args)
@@ -108,6 +106,7 @@ class BCPtr(_object):
         except: self.this = this
     __swig_destroy__ = _BC.delete_BCPtr
     __del__ = lambda self : None;
+    def bc(self): return _BC.BCPtr_bc(self)
     def bcsImposed(self, *args): return _BC.BCPtr_bcsImposed(self, *args)
     def singlePointBC(self, *args): return _BC.BCPtr_singlePointBC(self, *args)
     def valueForSinglePointBC(self, *args): return _BC.BCPtr_valueForSinglePointBC(self, *args)
