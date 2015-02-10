@@ -1,8 +1,10 @@
 import Function
+import PoissonFormulation
 #import Var
 #import Solution
-#import Mesh
-#import MeshFactory
+import BF
+import Mesh
+import MeshFactory
 import unittest
 
 x1 = Function.Function_xn(2)
@@ -24,9 +26,7 @@ class TestFunction(unittest.TestCase):
         self.assertAlmostEqual(0,Function.Function_constant(2).dy().evaluate(1,2),delta=1e-12)
         v = Function.Function_vectorize(z , z)
         self.assertAlmostEqual(0.0, v.div().evaluate(1,2), delta = 1e-12)
-
-        # problem? evaluate requires rank 0 function??
-        #self.assertAlmostEqual(0.0, v.grad().evaluate(1,2), delta = 1e-12)
+        self.assertAlmostEqual(2.0, x1.grad().x().evaluate(1,2), delta = 1e-12)
 
     """ Test rank() """
     def testRank(self):
@@ -35,9 +35,11 @@ class TestFunction(unittest.TestCase):
 
     """ Test 12norm() """
     def testNorm(self):
-        # Problem - make a mesh
-        #self.assertAlmostEqual(Function.l2norm(MeshPtr), 342 ,delta = 1e-12) 
-        pass
+        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        poissonBF = poissonForm.bf()
+        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3], 1)
+        self.assertAlmostEqual(z.l2norm(mesh), 0.0 ,delta = 1e-12) 
+        
 
     """ Test displayString()"""
     def testDisplayString(self):
@@ -49,6 +51,5 @@ class TestFunction(unittest.TestCase):
         self.assertAlmostEqual(3, Function.Function_xn(1).evaluate(3, 2), delta=1e-12)
         self.assertAlmostEqual(2, Function.Function_yn(1).evaluate(3, 2), delta=1e-12)
         self.assertAlmostEqual(12, Function.Function_constant(12).evaluate(2, 2), delta = 1e-12)
-
-        # Problem - what is this rank business?
-        #self.assertAlmostEqual(16.0, Function.Function_composedFunction(x1, x1).evaluate(2, 0),delta=1e-12)
+        x3 = Function.Function_vectorize(z ,z)
+        self.assertAlmostEqual(0.0, Function.Function_composedFunction(x1, x3).evaluate(2, 0),delta=1e-12)
