@@ -4,8 +4,15 @@
 %}
 
 %include "std_string.i"
+%include "std_vector.i"
+
+namespace std {
+  %template(DoubleVector) vector<double>;
+}
 
 %nodefaultctor SpatialFilter;  // Disable the default constructor for class SpatialFilter
+
+using namespace std;
 
 class SpatialFilter {
 public:
