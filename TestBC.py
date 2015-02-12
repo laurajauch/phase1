@@ -17,11 +17,9 @@ class TestBC(unittest.TestCase):
     def testSinglePoint(self):
         boundary.addSinglePointBC(17, 0.0)    
         self.assertTrue(boundary.singlePointBC(17))
-        #self.assertTrue(boundary.bcsImposed(17)) 
-        #false?
+        self.assertFalse(boundary.bcsImposed(17)) 
         self.assertAlmostEqual(boundary.valueForSinglePointBC(17), 0.0, delta = 1e-12)
-        #self.assertAlmostEqual(boundary.vertexForSinglePointBC(17), -1, delta = 1e-12)
-        #how test GlobalIndexType?
+        self.assertEqual(boundary.vertexForSinglePointBC(17), -1)
         
     def testZeroMean(self):
         #boundary.addZeroMeanConstraint(vtest)    
