@@ -1,5 +1,7 @@
 *.py~
 *.cxx
+*.i~
+*.pyc
 
 # Compiled Object files
 *.slo

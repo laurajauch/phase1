@@ -10,6 +10,7 @@ class TestSpatialFilter(unittest.TestCase):
         point=SpatialFilter.DoubleVector(2,1.0)
         self.assertTrue(SpatialFilter.SpatialFilter_allSpace().matchesPoint(point))
         self.assertTrue(SpatialFilter.SpatialFilter_intersectionFilter(SpatialFilter.SpatialFilter_allSpace(),SpatialFilter.SpatialFilter_allSpace()).matchesPoint(2,4))
+        self.assertFalse(SpatialFilter.SpatialFilter_intersectionFilter(SpatialFilter.SpatialFilter_allSpace(),SpatialFilter.SpatialFilter_allSpace()).matchesPoint(2,4))
         self.assertFalse(SpatialFilter.SpatialFilter_negatedFilter(SpatialFilter.SpatialFilter_allSpace()).matchesPoint(5,8))
         self.assertTrue(SpatialFilter.SpatialFilter_unionFilter(SpatialFilter.SpatialFilter_allSpace(),SpatialFilter.SpatialFilter_allSpace()).matchesPoint(6,1))
 
