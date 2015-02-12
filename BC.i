@@ -8,12 +8,15 @@
 
 %nodefaultctor BC;
 
+#include "IndexType.h"
+
+typedef unsigned GlobalIndexType;
 
 class BC {
  public:
 
   #BC();
-  BCPtr bc();
+  static BCPtr bc();
   bool bcsImposed(int varID);
   bool singlePointBC(int varID);
   double valueForSinglePointBC(int varID);

@@ -1,7 +1,7 @@
 import Function
 import PoissonFormulation
 import VarFactory
-#import Solution
+import Solution
 import BF
 import Mesh
 import MeshFactory
@@ -62,4 +62,5 @@ class TestFunction(unittest.TestCase):
         #     })
         #s.addSolution(s, 1.0,[phi.ID()])
 	#self.assertAlmostEqual(z.l2norm(mesh) , Function.Function_solution( , ), 1e-12)
+
         pass
