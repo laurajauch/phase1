@@ -7,7 +7,8 @@ class TestSpatialFilter(unittest.TestCase):
     """Test matchespoint(), intersectionFilter(), negatedFilter(), untionFilter(), allSpace()"""
     def testmatchespoint(self):
         self.assertTrue(SpatialFilter.SpatialFilter_allSpace().matchesPoint(1,1))
-        #self.assertTrue(SpatialFilter.SpatialFilter_allSpace().matchesPoint(Function.Function_vectorize(Function.Function_xn(3),Function.Function_xn(2))))
+        point=SpatialFilter.DoubleVector(2,1.0)
+        self.assertTrue(SpatialFilter.SpatialFilter_allSpace().matchesPoint(point))
         self.assertTrue(SpatialFilter.SpatialFilter_intersectionFilter(SpatialFilter.SpatialFilter_allSpace(),SpatialFilter.SpatialFilter_allSpace()).matchesPoint(2,4))
         self.assertFalse(SpatialFilter.SpatialFilter_negatedFilter(SpatialFilter.SpatialFilter_allSpace()).matchesPoint(5,8))
         self.assertTrue(SpatialFilter.SpatialFilter_unionFilter(SpatialFilter.SpatialFilter_allSpace(),SpatialFilter.SpatialFilter_allSpace()).matchesPoint(6,1))
