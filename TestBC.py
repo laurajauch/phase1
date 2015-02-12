@@ -7,7 +7,7 @@ import unittest
 
 boundary = BC.BC_bc()
 vf = VarFactory.VarFactory();
-vtest = vf.test(17);
+vtest = vf.fieldVar("test", 1);
 
 class TestBC(unittest.TestCase):
     """ test BC()"""
@@ -19,14 +19,13 @@ class TestBC(unittest.TestCase):
         self.assertTrue(boundary.singlePointBC(17))
         self.assertFalse(boundary.bcsImposed(17)) 
         self.assertAlmostEqual(boundary.valueForSinglePointBC(17), 0.0, delta = 1e-12)
-        self.assertEqual(boundary.vertexForSinglePointBC(17), -1)
-        #how test GlobalIndexType?
+        #self.assertEqual(boundary.vertexForSinglePointBC(vtest.ID()), -1)
         
     def testZeroMean(self):
-        #boundary.addZeroMeanConstraint(vtest)    
-        #self.assertTrue(boundary.imposeZeroMeanConstarint(17))
-        #boundary.removeZeroMeanConstraint(vtest)
-        #self.assertFalse(boundary.imposeZeroMeanConstraint(varID))
+        boundary.addZeroMeanConstraint(vtest)    
+        self.assertTrue(boundary.imposeZeroMeanConstraint(vtest.ID()))
+        boundary.removeZeroMeanConstraint(vtest.ID())
+        self.assertFalse(boundary.imposeZeroMeanConstraint(vtest.ID()))
         pass
     
     """addDirichlet, getDirichletBC, getSpatiallyFilteredFunctionForDirichletBC"""    

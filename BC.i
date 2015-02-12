@@ -8,6 +8,8 @@
 
 %nodefaultctor BC;
 
+#include "IndexType.h"
+
 typedef unsigned GlobalIndexType;
 
 class BC {
