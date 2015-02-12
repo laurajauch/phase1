@@ -1,7 +1,7 @@
 import Function
 import PoissonFormulation
 import VarFactory
-#import Solution
+import Solution
 import BF
 import Mesh
 import MeshFactory
@@ -55,6 +55,17 @@ class TestFunction(unittest.TestCase):
 
     """Test solution()"""
     def testSolution(self):
+    	vf = VarFactory.VarFactory();
+        p = vf.test(9);
+        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        poissonBF = poissonForm.bf()
+        pointd = [1.0,1.0]
+        pointi = [2,3]
+        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF, pointd, pointi, 1)
+        solution = Solution.Solution_solution(mesh)
+        solution.projectOntoMesh(map(p.ID(), z))
+        self.assertAlmostEqual(z.l2norm(mesh) , z.solution(p, solution).l2norm(mesh), delta=1e-12)
+    	
         #p = VarFactory.fluxVar("Hello")
         #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
         #poissonBF = poissonForm.bf()
