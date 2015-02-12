@@ -10,6 +10,9 @@ import unittest
 x1 = Function.Function_xn(2)
 y1 = Function.Function_yn(1)
 z = Function.Function_constant(0)
+poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+poissonBF = poissonForm.bf()
+mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3], 1)
 
 class TestFunction(unittest.TestCase):
 
@@ -34,9 +37,6 @@ class TestFunction(unittest.TestCase):
 
     """ Test 12norm() """
     def testNorm(self):
-        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        poissonBF = poissonForm.bf()
-        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3], 1)
         self.assertAlmostEqual(z.l2norm(mesh), 0.0 ,delta = 1e-12) 
         
 
@@ -55,10 +55,11 @@ class TestFunction(unittest.TestCase):
 
     """Test solution()"""
     def testSolution(self):
-        #p = VarFactory.fluxVar("Hello")
-        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        #poissonBF = poissonForm.bf()
-        #mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3], 1)
-        #solution = Solution.projectOntoMesh(
-	#self.assertAlmostEqual(z.l2norm(mesh) , Function.Function_solution(p, Solution.Solution_solution()), 1e-12)
+        #s = Solution.Solution_solution(mesh)
+        #s.projectOntoMesh({
+        #        phi.ID : x1,
+        #        psi.ID() : Function.Function_vectorize(Function.Function_constant(1), Function.Function_constant(0))
+        #     })
+        #s.addSolution(s, 1.0,[phi.ID()])
+	#self.assertAlmostEqual(z.l2norm(mesh) , Function.Function_solution( , ), 1e-12)
         pass
