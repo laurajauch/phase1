@@ -65,11 +65,4 @@ class TestFunction(unittest.TestCase):
         solution = Solution.Solution_solution(mesh)
         solution.projectOntoMesh(map(p.ID(), z))
         self.assertAlmostEqual(z.l2norm(mesh) , z.solution(p, solution).l2norm(mesh), delta=1e-12)
-    	
-        #p = VarFactory.fluxVar("Hello")
-        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        #poissonBF = poissonForm.bf()
-        #mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3], 1)
-        #solution = Solution.projectOntoMesh(
-	#self.assertAlmostEqual(z.l2norm(mesh) , Function.Function_solution(p, Solution.Solution_solution()), 1e-12)
         pass
