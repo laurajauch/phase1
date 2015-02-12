@@ -8,6 +8,7 @@ import unittest
 boundary = BC.BC_bc()
 vf = VarFactory.VarFactory();
 vtest = vf.fieldVar("test", 1);
+vflux = vf.fluxVar("test");
 
 class TestBC(unittest.TestCase):
     """ test BC()"""
@@ -26,10 +27,11 @@ class TestBC(unittest.TestCase):
         self.assertTrue(boundary.imposeZeroMeanConstraint(vtest.ID()))
         boundary.removeZeroMeanConstraint(vtest.ID())
         self.assertFalse(boundary.imposeZeroMeanConstraint(vtest.ID()))
-        pass
     
     """addDirichlet, getDirichletBC, getSpatiallyFilteredFunctionForDirichletBC"""    
-    def testDirichlet(self):    
-        #self.assertTrue(BC.addDirchlet(VarFactory.fluxVar("pizza"),SpatialFilter.lessThanX(12.0), Function.xn(4)).something())
-        pass
+    def testDirichlet(self): 
+        f = Function.Function_xn(1)
+        boundary.addDirichlet(vflux, SpatialFilter.SpatialFilter_allSpace(), f)
+        self.assertAlmostEqual(boundary.getSpatiallyFilteredFunctionForDirichletBC(vflux.ID()).evaluate(1,0), 1, delta = 1e-12)
+        boundary.getDirichletBC(vflux.ID())
         
