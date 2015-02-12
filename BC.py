@@ -78,7 +78,6 @@ class BC(_object):
     __repr__ = _swig_repr
     __swig_getmethods__["bc"] = lambda x: _BC.BC_bc
     if _newclass:bc = staticmethod(_BC.BC_bc)
-    def bc(self): return _BC.BC_bc(self)
     def bcsImposed(self, *args): return _BC.BC_bcsImposed(self, *args)
     def singlePointBC(self, *args): return _BC.BC_singlePointBC(self, *args)
     def valueForSinglePointBC(self, *args): return _BC.BC_valueForSinglePointBC(self, *args)

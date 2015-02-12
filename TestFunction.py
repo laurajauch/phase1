@@ -1,6 +1,7 @@
 import Function
 import PoissonFormulation
 import VarFactory
+import Var
 import Solution
 import BF
 import Mesh
@@ -55,12 +56,13 @@ class TestFunction(unittest.TestCase):
 
     """Test solution()"""
     def testSolution(self):
-        #s = Solution.Solution_solution(mesh)
-        #s.projectOntoMesh({
-        #        phi.ID : x1,
-        #        psi.ID() : Function.Function_vectorize(Function.Function_constant(1), Function.Function_constant(0))
-        #     })
-        #s.addSolution(s, 1.0,[phi.ID()])
-	#self.assertAlmostEqual(z.l2norm(mesh) , Function.Function_solution( , ), 1e-12)
-
-        pass
+        vf = VarFactory.VarFactory()
+        p = vf.fieldVar("p")
+        v = vf.testVar("v", Var.HGRAD)
+        b = BF.BF_bf(vf)
+        msh = MeshFactory.MeshFactory_rectilinearMesh(b , [1.0,1.0], [1,1], 2)
+        s = Solution.Solution_solution(msh)
+        s.projectOntoMesh({ p.ID() : Function.Function_xn(45)})
+        r = Function.Function_solution(p, s)
+	self.assertAlmostEqual(Function.Function_xn(45).l2norm(msh, 0) - r.l2norm(msh,0),0.00028653041840038087 , delta =1e-12)
+        

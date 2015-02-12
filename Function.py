@@ -241,6 +241,181 @@ class MeshPtr(_object):
 MeshPtr_swigregister = _Function.MeshPtr_swigregister
 MeshPtr_swigregister(MeshPtr)
 
+class SetInt(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SetInt, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, SetInt, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _Function.SetInt_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _Function.SetInt___nonzero__(self)
+    def __bool__(self): return _Function.SetInt___bool__(self)
+    def __len__(self): return _Function.SetInt___len__(self)
+    def append(self, *args): return _Function.SetInt_append(self, *args)
+    def __contains__(self, *args): return _Function.SetInt___contains__(self, *args)
+    def __getitem__(self, *args): return _Function.SetInt___getitem__(self, *args)
+    def add(self, *args): return _Function.SetInt_add(self, *args)
+    def discard(self, *args): return _Function.SetInt_discard(self, *args)
+    def __init__(self, *args): 
+        this = _Function.new_SetInt(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def empty(self): return _Function.SetInt_empty(self)
+    def size(self): return _Function.SetInt_size(self)
+    def clear(self): return _Function.SetInt_clear(self)
+    def swap(self, *args): return _Function.SetInt_swap(self, *args)
+    def count(self, *args): return _Function.SetInt_count(self, *args)
+    def begin(self): return _Function.SetInt_begin(self)
+    def end(self): return _Function.SetInt_end(self)
+    def rbegin(self): return _Function.SetInt_rbegin(self)
+    def rend(self): return _Function.SetInt_rend(self)
+    def erase(self, *args): return _Function.SetInt_erase(self, *args)
+    def find(self, *args): return _Function.SetInt_find(self, *args)
+    def lower_bound(self, *args): return _Function.SetInt_lower_bound(self, *args)
+    def upper_bound(self, *args): return _Function.SetInt_upper_bound(self, *args)
+    def equal_range(self, *args): return _Function.SetInt_equal_range(self, *args)
+    def insert(self, *args): return _Function.SetInt_insert(self, *args)
+    __swig_destroy__ = _Function.delete_SetInt
+    __del__ = lambda self : None;
+SetInt_swigregister = _Function.SetInt_swigregister
+SetInt_swigregister(SetInt)
+
+class MapIntToFunction(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, MapIntToFunction, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, MapIntToFunction, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _Function.MapIntToFunction_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _Function.MapIntToFunction___nonzero__(self)
+    def __bool__(self): return _Function.MapIntToFunction___bool__(self)
+    def __len__(self): return _Function.MapIntToFunction___len__(self)
+    def __iter__(self): return self.key_iterator()
+    def iterkeys(self): return self.key_iterator()
+    def itervalues(self): return self.value_iterator()
+    def iteritems(self): return self.iterator()
+    def __getitem__(self, *args): return _Function.MapIntToFunction___getitem__(self, *args)
+    def __delitem__(self, *args): return _Function.MapIntToFunction___delitem__(self, *args)
+    def has_key(self, *args): return _Function.MapIntToFunction_has_key(self, *args)
+    def keys(self): return _Function.MapIntToFunction_keys(self)
+    def values(self): return _Function.MapIntToFunction_values(self)
+    def items(self): return _Function.MapIntToFunction_items(self)
+    def __contains__(self, *args): return _Function.MapIntToFunction___contains__(self, *args)
+    def key_iterator(self): return _Function.MapIntToFunction_key_iterator(self)
+    def value_iterator(self): return _Function.MapIntToFunction_value_iterator(self)
+    def __setitem__(self, *args): return _Function.MapIntToFunction___setitem__(self, *args)
+    def asdict(self): return _Function.MapIntToFunction_asdict(self)
+    def __init__(self, *args): 
+        this = _Function.new_MapIntToFunction(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def empty(self): return _Function.MapIntToFunction_empty(self)
+    def size(self): return _Function.MapIntToFunction_size(self)
+    def clear(self): return _Function.MapIntToFunction_clear(self)
+    def swap(self, *args): return _Function.MapIntToFunction_swap(self, *args)
+    def get_allocator(self): return _Function.MapIntToFunction_get_allocator(self)
+    def begin(self): return _Function.MapIntToFunction_begin(self)
+    def end(self): return _Function.MapIntToFunction_end(self)
+    def rbegin(self): return _Function.MapIntToFunction_rbegin(self)
+    def rend(self): return _Function.MapIntToFunction_rend(self)
+    def count(self, *args): return _Function.MapIntToFunction_count(self, *args)
+    def erase(self, *args): return _Function.MapIntToFunction_erase(self, *args)
+    def find(self, *args): return _Function.MapIntToFunction_find(self, *args)
+    def lower_bound(self, *args): return _Function.MapIntToFunction_lower_bound(self, *args)
+    def upper_bound(self, *args): return _Function.MapIntToFunction_upper_bound(self, *args)
+    __swig_destroy__ = _Function.delete_MapIntToFunction
+    __del__ = lambda self : None;
+MapIntToFunction_swigregister = _Function.MapIntToFunction_swigregister
+MapIntToFunction_swigregister(MapIntToFunction)
+
+class Solution(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Solution, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Solution, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    __swig_getmethods__["solution"] = lambda x: _Function.Solution_solution
+    if _newclass:solution = staticmethod(_Function.Solution_solution)
+    def solve(self): return _Function.Solution_solve(self)
+    def addSolution(self, *args): return _Function.Solution_addSolution(self, *args)
+    def clear(self): return _Function.Solution_clear(self)
+    def cubatureEnrichmentDegree(self): return _Function.Solution_cubatureEnrichmentDegree(self)
+    def setCubatureEnrichmentDegree(self, *args): return _Function.Solution_setCubatureEnrichmentDegree(self, *args)
+    def L2NormOfSolution(self, *args): return _Function.Solution_L2NormOfSolution(self, *args)
+    def projectOntoMesh(self, *args): return _Function.Solution_projectOntoMesh(self, *args)
+    def energyErrorTotal(self): return _Function.Solution_energyErrorTotal(self)
+    def setWriteMatrixToFile(self, *args): return _Function.Solution_setWriteMatrixToFile(self, *args)
+    def setWriteMatrixToMatrixMarketFile(self, *args): return _Function.Solution_setWriteMatrixToMatrixMarketFile(self, *args)
+    def setWriteRHSToMatrixMarketFile(self, *args): return _Function.Solution_setWriteRHSToMatrixMarketFile(self, *args)
+    def mesh(self): return _Function.Solution_mesh(self)
+    def bc(self): return _Function.Solution_bc(self)
+    def rhs(self): return _Function.Solution_rhs(self)
+    def ip(self): return _Function.Solution_ip(self)
+    def setBC(self, *args): return _Function.Solution_setBC(self, *args)
+    def setRHS(self, *args): return _Function.Solution_setRHS(self, *args)
+    def setIP(self, *args): return _Function.Solution_setIP(self, *args)
+    def save(self, *args): return _Function.Solution_save(self, *args)
+    __swig_getmethods__["load"] = lambda x: _Function.Solution_load
+    if _newclass:load = staticmethod(_Function.Solution_load)
+    def saveToHDF5(self, *args): return _Function.Solution_saveToHDF5(self, *args)
+    def loadFromHDF5(self, *args): return _Function.Solution_loadFromHDF5(self, *args)
+    def setUseCondensedSolve(self, *args): return _Function.Solution_setUseCondensedSolve(self, *args)
+    __swig_destroy__ = _Function.delete_Solution
+    __del__ = lambda self : None;
+Solution_swigregister = _Function.Solution_swigregister
+Solution_swigregister(Solution)
+
+def Solution_solution(*args):
+  return _Function.Solution_solution(*args)
+Solution_solution = _Function.Solution_solution
+
+def Solution_load(*args):
+  return _Function.Solution_load(*args)
+Solution_load = _Function.Solution_load
+
+class SolutionPtr(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SolutionPtr, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, SolutionPtr, name)
+    __repr__ = _swig_repr
+    def __deref__(self): return _Function.SolutionPtr___deref__(self)
+    def __init__(self): 
+        this = _Function.new_SolutionPtr()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _Function.delete_SolutionPtr
+    __del__ = lambda self : None;
+    def solution(self, *args): return _Function.SolutionPtr_solution(self, *args)
+    def solve(self): return _Function.SolutionPtr_solve(self)
+    def addSolution(self, *args): return _Function.SolutionPtr_addSolution(self, *args)
+    def clear(self): return _Function.SolutionPtr_clear(self)
+    def cubatureEnrichmentDegree(self): return _Function.SolutionPtr_cubatureEnrichmentDegree(self)
+    def setCubatureEnrichmentDegree(self, *args): return _Function.SolutionPtr_setCubatureEnrichmentDegree(self, *args)
+    def L2NormOfSolution(self, *args): return _Function.SolutionPtr_L2NormOfSolution(self, *args)
+    def projectOntoMesh(self, *args): return _Function.SolutionPtr_projectOntoMesh(self, *args)
+    def energyErrorTotal(self): return _Function.SolutionPtr_energyErrorTotal(self)
+    def setWriteMatrixToFile(self, *args): return _Function.SolutionPtr_setWriteMatrixToFile(self, *args)
+    def setWriteMatrixToMatrixMarketFile(self, *args): return _Function.SolutionPtr_setWriteMatrixToMatrixMarketFile(self, *args)
+    def setWriteRHSToMatrixMarketFile(self, *args): return _Function.SolutionPtr_setWriteRHSToMatrixMarketFile(self, *args)
+    def mesh(self): return _Function.SolutionPtr_mesh(self)
+    def bc(self): return _Function.SolutionPtr_bc(self)
+    def rhs(self): return _Function.SolutionPtr_rhs(self)
+    def ip(self): return _Function.SolutionPtr_ip(self)
+    def setBC(self, *args): return _Function.SolutionPtr_setBC(self, *args)
+    def setRHS(self, *args): return _Function.SolutionPtr_setRHS(self, *args)
+    def setIP(self, *args): return _Function.SolutionPtr_setIP(self, *args)
+    def save(self, *args): return _Function.SolutionPtr_save(self, *args)
+    def load(self, *args): return _Function.SolutionPtr_load(self, *args)
+    def saveToHDF5(self, *args): return _Function.SolutionPtr_saveToHDF5(self, *args)
+    def loadFromHDF5(self, *args): return _Function.SolutionPtr_loadFromHDF5(self, *args)
+    def setUseCondensedSolve(self, *args): return _Function.SolutionPtr_setUseCondensedSolve(self, *args)
+SolutionPtr_swigregister = _Function.SolutionPtr_swigregister
+SolutionPtr_swigregister(SolutionPtr)
+
 class FunctionPtr(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, FunctionPtr, name, value)
