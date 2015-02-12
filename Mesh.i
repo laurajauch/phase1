@@ -7,7 +7,16 @@
 %include "std_vector.i"
 %include "std_set.i"
 
+namespace std {
+  %template(IntVector) vector<int>;
+  %template(UnsignedSet) set<unsigned>;
+ }
+
 %nodefaultctor Mesh;  // Disable the default constructor for class Mesh
+
+typedef unsigned GlobalIndexType;
+
+using namespace std;
 
 class Mesh {
 public:

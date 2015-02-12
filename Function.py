@@ -98,6 +98,93 @@ class SwigPyIterator(_object):
 SwigPyIterator_swigregister = _Function.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
+class IntVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, IntVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, IntVector, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _Function.IntVector_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _Function.IntVector___nonzero__(self)
+    def __bool__(self): return _Function.IntVector___bool__(self)
+    def __len__(self): return _Function.IntVector___len__(self)
+    def pop(self): return _Function.IntVector_pop(self)
+    def __getslice__(self, *args): return _Function.IntVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _Function.IntVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _Function.IntVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _Function.IntVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _Function.IntVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _Function.IntVector___setitem__(self, *args)
+    def append(self, *args): return _Function.IntVector_append(self, *args)
+    def empty(self): return _Function.IntVector_empty(self)
+    def size(self): return _Function.IntVector_size(self)
+    def clear(self): return _Function.IntVector_clear(self)
+    def swap(self, *args): return _Function.IntVector_swap(self, *args)
+    def get_allocator(self): return _Function.IntVector_get_allocator(self)
+    def begin(self): return _Function.IntVector_begin(self)
+    def end(self): return _Function.IntVector_end(self)
+    def rbegin(self): return _Function.IntVector_rbegin(self)
+    def rend(self): return _Function.IntVector_rend(self)
+    def pop_back(self): return _Function.IntVector_pop_back(self)
+    def erase(self, *args): return _Function.IntVector_erase(self, *args)
+    def __init__(self, *args): 
+        this = _Function.new_IntVector(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args): return _Function.IntVector_push_back(self, *args)
+    def front(self): return _Function.IntVector_front(self)
+    def back(self): return _Function.IntVector_back(self)
+    def assign(self, *args): return _Function.IntVector_assign(self, *args)
+    def resize(self, *args): return _Function.IntVector_resize(self, *args)
+    def insert(self, *args): return _Function.IntVector_insert(self, *args)
+    def reserve(self, *args): return _Function.IntVector_reserve(self, *args)
+    def capacity(self): return _Function.IntVector_capacity(self)
+    __swig_destroy__ = _Function.delete_IntVector
+    __del__ = lambda self : None;
+IntVector_swigregister = _Function.IntVector_swigregister
+IntVector_swigregister(IntVector)
+
+class UnsignedSet(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, UnsignedSet, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, UnsignedSet, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _Function.UnsignedSet_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _Function.UnsignedSet___nonzero__(self)
+    def __bool__(self): return _Function.UnsignedSet___bool__(self)
+    def __len__(self): return _Function.UnsignedSet___len__(self)
+    def append(self, *args): return _Function.UnsignedSet_append(self, *args)
+    def __contains__(self, *args): return _Function.UnsignedSet___contains__(self, *args)
+    def __getitem__(self, *args): return _Function.UnsignedSet___getitem__(self, *args)
+    def add(self, *args): return _Function.UnsignedSet_add(self, *args)
+    def discard(self, *args): return _Function.UnsignedSet_discard(self, *args)
+    def __init__(self, *args): 
+        this = _Function.new_UnsignedSet(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def empty(self): return _Function.UnsignedSet_empty(self)
+    def size(self): return _Function.UnsignedSet_size(self)
+    def clear(self): return _Function.UnsignedSet_clear(self)
+    def swap(self, *args): return _Function.UnsignedSet_swap(self, *args)
+    def count(self, *args): return _Function.UnsignedSet_count(self, *args)
+    def begin(self): return _Function.UnsignedSet_begin(self)
+    def end(self): return _Function.UnsignedSet_end(self)
+    def rbegin(self): return _Function.UnsignedSet_rbegin(self)
+    def rend(self): return _Function.UnsignedSet_rend(self)
+    def erase(self, *args): return _Function.UnsignedSet_erase(self, *args)
+    def find(self, *args): return _Function.UnsignedSet_find(self, *args)
+    def lower_bound(self, *args): return _Function.UnsignedSet_lower_bound(self, *args)
+    def upper_bound(self, *args): return _Function.UnsignedSet_upper_bound(self, *args)
+    def equal_range(self, *args): return _Function.UnsignedSet_equal_range(self, *args)
+    def insert(self, *args): return _Function.UnsignedSet_insert(self, *args)
+    __swig_destroy__ = _Function.delete_UnsignedSet
+    __del__ = lambda self : None;
+UnsignedSet_swigregister = _Function.UnsignedSet_swigregister
+UnsignedSet_swigregister(UnsignedSet)
+
 class Mesh(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Mesh, name, value)
