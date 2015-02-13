@@ -20,7 +20,7 @@ class TestBC(unittest.TestCase):
         self.assertTrue(boundary.singlePointBC(17))
         self.assertFalse(boundary.bcsImposed(17)) 
         self.assertAlmostEqual(boundary.valueForSinglePointBC(17), 0.0, delta = 1e-12)
-        #self.assertEqual(boundary.vertexForSinglePointBC(vtest.ID()), -1)
+        self.assertEqual(boundary.vertexForSinglePointBC(vtest.ID()), 4294967295)
         
     def testZeroMean(self):
         boundary.addZeroMeanConstraint(vtest)    
@@ -34,4 +34,6 @@ class TestBC(unittest.TestCase):
         boundary.addDirichlet(vflux, SpatialFilter.SpatialFilter_allSpace(), f)
         self.assertAlmostEqual(boundary.getSpatiallyFilteredFunctionForDirichletBC(vflux.ID()).evaluate(1,0), 1, delta = 1e-12)
         boundary.getDirichletBC(vflux.ID())
+        #self.assertTrue(dirichlet[0].matchesPoint(1.0,1.0))
+        #self.assertAlmostEqual(dirichlet[1].evaluate(1.0,3.0), 0, delta = 1e-12)
         
