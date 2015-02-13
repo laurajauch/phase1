@@ -9,10 +9,12 @@
 %nodefaultctor Function;
 %include "Mesh.i"
 %include "Solution.i"
+%include "SpatialFilter.i"
   
 namespace std {
-  %template(PairSpatialFilterFunction) pair<SpatialFilterPtr,FunctionPtr>;
+  %template(DoubleVector) vector<double>;
 }
+
 using namespace std;
 
 class FunctionPtr {

@@ -74,13 +74,12 @@ class TestFunction(unittest.TestCase):
        self.assertAlmostEqual(30, f.evaluate(1,200), delta=1e-12)
        f = Function.Function_constant(4) * 3
        self.assertAlmostEqual(12, f.evaluate(-7,20), delta=1e-12)
-       #vector multiplication not working
        vec = [3,4]
-       #f = vec * Function.Function_xn(1)
-       #self.assertAlmostEqual(6, f.evaluate(2,1), delta=1e-12)
+       f = vec * Function.Function_xn(1)
+       self.assertAlmostEqual(6, f.x().evaluate(2,1), delta=1e-12)
        vec = [3,1]
-       #f = Function.Function_yn(1) * vec
-       #self.assertAlmostEqual(2, f.evaluate(-1,2), delta=1e-12)
+       f = Function.Function_yn(1) * vec
+       self.assertAlmostEqual(6, f.x().evaluate(-1,2), delta=1e-12)
 
     """Test operator/"""
     def testoperatordiv(self):
