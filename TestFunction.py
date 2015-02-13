@@ -108,6 +108,5 @@ class TestFunction(unittest.TestCase):
        self.assertAlmostEqual(10, f.evaluate(12,46), delta=1e-12)
        f = -5 - Function.Function_constant(-4)
        self.assertAlmostEqual(-1, f.evaluate(8,46), delta=1e-12)
-       #unary minus not working
-       #f = -Function.Function_constant(9)
-       #self.assertAlmostEqual(-9, f.evaluate(-43,12), delta=1e-12)    
+       f = -Function.Function_constant(9)
+       self.assertAlmostEqual(-9, f.evaluate(-43,12), delta=1e-12)    
