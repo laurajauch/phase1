@@ -3,11 +3,17 @@
 #include "Function.h"
   %}
 
+
 %include "std_string.i"
 %include "std_vector.i"
 %nodefaultctor Function;
 %include "Mesh.i"
 %include "Solution.i"
+  
+namespace std {
+  %template(PairSpatialFilterFunction) pair<SpatialFilterPtr,FunctionPtr>;
+}
+using namespace std;
 
 class FunctionPtr {
 public:

@@ -69,6 +69,39 @@ except AttributeError:
     _newclass = 0
 
 
+class PairSpatialFilterFunction(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PairSpatialFilterFunction, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PairSpatialFilterFunction, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _BC.new_PairSpatialFilterFunction(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_setmethods__["first"] = _BC.PairSpatialFilterFunction_first_set
+    __swig_getmethods__["first"] = _BC.PairSpatialFilterFunction_first_get
+    if _newclass:first = _swig_property(_BC.PairSpatialFilterFunction_first_get, _BC.PairSpatialFilterFunction_first_set)
+    __swig_setmethods__["second"] = _BC.PairSpatialFilterFunction_second_set
+    __swig_getmethods__["second"] = _BC.PairSpatialFilterFunction_second_get
+    if _newclass:second = _swig_property(_BC.PairSpatialFilterFunction_second_get, _BC.PairSpatialFilterFunction_second_set)
+    def __len__(self): return 2
+    def __repr__(self): return str((self.first, self.second))
+    def __getitem__(self, index): 
+      if not (index % 2): 
+        return self.first
+      else:
+        return self.second
+    def __setitem__(self, index, val):
+      if not (index % 2): 
+        self.first = val
+      else:
+        self.second = val
+    __swig_destroy__ = _BC.delete_PairSpatialFilterFunction
+    __del__ = lambda self : None;
+PairSpatialFilterFunction_swigregister = _BC.PairSpatialFilterFunction_swigregister
+PairSpatialFilterFunction_swigregister(PairSpatialFilterFunction)
+
 class BC(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, BC, name, value)
