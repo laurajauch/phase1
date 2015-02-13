@@ -416,6 +416,39 @@ class SolutionPtr(_object):
 SolutionPtr_swigregister = _Function.SolutionPtr_swigregister
 SolutionPtr_swigregister(SolutionPtr)
 
+class PairSpatialFilterFunction(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PairSpatialFilterFunction, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PairSpatialFilterFunction, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _Function.new_PairSpatialFilterFunction(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_setmethods__["first"] = _Function.PairSpatialFilterFunction_first_set
+    __swig_getmethods__["first"] = _Function.PairSpatialFilterFunction_first_get
+    if _newclass:first = _swig_property(_Function.PairSpatialFilterFunction_first_get, _Function.PairSpatialFilterFunction_first_set)
+    __swig_setmethods__["second"] = _Function.PairSpatialFilterFunction_second_set
+    __swig_getmethods__["second"] = _Function.PairSpatialFilterFunction_second_get
+    if _newclass:second = _swig_property(_Function.PairSpatialFilterFunction_second_get, _Function.PairSpatialFilterFunction_second_set)
+    def __len__(self): return 2
+    def __repr__(self): return str((self.first, self.second))
+    def __getitem__(self, index): 
+      if not (index % 2): 
+        return self.first
+      else:
+        return self.second
+    def __setitem__(self, index, val):
+      if not (index % 2): 
+        self.first = val
+      else:
+        self.second = val
+    __swig_destroy__ = _Function.delete_PairSpatialFilterFunction
+    __del__ = lambda self : None;
+PairSpatialFilterFunction_swigregister = _Function.PairSpatialFilterFunction_swigregister
+PairSpatialFilterFunction_swigregister(PairSpatialFilterFunction)
+
 class FunctionPtr(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, FunctionPtr, name, value)
@@ -425,10 +458,13 @@ class FunctionPtr(_object):
     def __deref__(self): return _Function.FunctionPtr___deref__(self)
     def __add__(self, *args): return _Function.FunctionPtr___add__(self, *args)
     def __radd__(self, *args): return _Function.FunctionPtr___radd__(self, *args)
-    def __mul__(self, *args): return _Function.FunctionPtr___mul__(self, *args)
-    def __rmul__(self, *args): return _Function.FunctionPtr___rmul__(self, *args)
+    def __div__(self, *args): return _Function.FunctionPtr___div__(self, *args)
+    def __rdiv__(self, *args): return _Function.FunctionPtr___rdiv__(self, *args)
     def __sub__(self, *args): return _Function.FunctionPtr___sub__(self, *args)
     def __rsub__(self, *args): return _Function.FunctionPtr___rsub__(self, *args)
+    def __neg__(self): return _Function.FunctionPtr___neg__(self)
+    def __mul__(self, *args): return _Function.FunctionPtr___mul__(self, *args)
+    def __rmul__(self, *args): return _Function.FunctionPtr___rmul__(self, *args)
     def __init__(self): 
         this = _Function.new_FunctionPtr()
         try: self.this.append(this)
