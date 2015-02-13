@@ -34,4 +34,6 @@ class TestBC(unittest.TestCase):
         boundary.addDirichlet(vflux, SpatialFilter.SpatialFilter_allSpace(), f)
         self.assertAlmostEqual(boundary.getSpatiallyFilteredFunctionForDirichletBC(vflux.ID()).evaluate(1,0), 1, delta = 1e-12)
         boundary.getDirichletBC(vflux.ID())
+        #self.assertTrue(dirichlet[0].matchesPoint(1.0,1.0))
+        #self.assertAlmostEqual(dirichlet[1].evaluate(1.0,3.0), 0, delta = 1e-12)
         
