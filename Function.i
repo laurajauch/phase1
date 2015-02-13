@@ -10,7 +10,7 @@
 %include "Solution.i"
 
 class FunctionPtr {
- public:
+public:
   Function* operator->();
 
   %extend {
@@ -29,6 +29,24 @@ class FunctionPtr {
     FunctionPtr __rmul__(double value) {
       return *self * value;
     }
+    FunctionPtr __mul__(vector<double> weight) {
+      return *self *  weight;
+    }
+    FunctionPtr __rmul__(vector<double> weight) {
+      return *self * weight;
+    }
+    FunctionPtr __mul__(FunctionPtr f2) {
+      return *self * f2;
+    }
+    FunctionPtr __div__(FunctionPtr scalarDivision) {
+      return *self / scalarDivision;
+    }
+    FunctionPtr __div__(double divisor) {
+      return *self / divisor;
+    }
+    FunctionPtr __rdiv__(double divisor) {
+      return divisor / *self;
+    }
     FunctionPtr __sub__(FunctionPtr f2) {
       return *self - f2;
     }
@@ -38,6 +56,18 @@ class FunctionPtr {
     FunctionPtr __rsub__(double value) {
       return value - *self;
     }
+    FunctionPtr __neg__() {
+      return - *self;
+    }
+
+    LinearTermPtr __mul__(VarPtr v) {
+      return *self * v;
+    }
+
+    LinearTermPtr __rmul__(VarPtr v) {
+      return *self * v;
+    }
+
   }
 };
 
