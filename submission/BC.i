@@ -8,6 +8,11 @@
 
 %nodefaultctor BC;
 
+namespace std {
+  %template(PairSpatialFilterFunction) pair<SpatialFilterPtr,FunctionPtr>;
+}
+using namespace std;
+
 #include "IndexType.h"
 
 typedef unsigned GlobalIndexType;

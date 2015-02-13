@@ -65,4 +65,47 @@ class TestFunction(unittest.TestCase):
         s.projectOntoMesh({ p.ID() : Function.Function_xn(45)})
         r = Function.Function_solution(p, s)
 	self.assertAlmostEqual(Function.Function_xn(45).l2norm(msh, 0) - r.l2norm(msh,0),0.00028653041840038087 , delta =1e-12)
-        
+    
+    """Test operator*"""
+    def testoperatormul(self):
+       f = Function.Function_constant(2) * Function.Function_constant(3)
+       self.assertAlmostEqual(6, f.evaluate(5,-2), delta=1e-12)
+       f = 10 * Function.Function_constant(3)
+       self.assertAlmostEqual(30, f.evaluate(1,200), delta=1e-12)
+       f = Function.Function_constant(4) * 3
+       self.assertAlmostEqual(12, f.evaluate(-7,20), delta=1e-12)
+       vec = [3,4]
+       f = vec * Function.Function_xn(1)
+       self.assertAlmostEqual(6, f.x().evaluate(2,1), delta=1e-12)
+       vec = [3,1]
+       f = Function.Function_yn(1) * vec
+       self.assertAlmostEqual(6, f.x().evaluate(-1,2), delta=1e-12)
+
+    """Test operator/"""
+    def testoperatordiv(self):
+       f = Function.Function_constant(-50)/Function.Function_constant(10)
+       self.assertAlmostEqual(-5, f.evaluate(4,-123), delta=1e-12)
+       f = Function.Function_constant(6)/3.0
+       self.assertAlmostEqual(2, f.evaluate(10,-6), delta=1e-12)
+       f = 12 / Function.Function_constant(4)
+       self.assertAlmostEqual(3, f.evaluate(0,0), delta=1e-12) 
+
+    """Test operator+"""
+    def testoperatorplus(self):
+       f = Function.Function_constant(22) + Function.Function_constant(18)
+       self.assertAlmostEqual(40, f.evaluate(8,-7), delta=1e-12)
+       f = Function.Function_constant(16) + 16
+       self.assertAlmostEqual(32, f.evaluate(5,4), delta=1e-12)
+       f = 12 + Function.Function_constant(14)
+       self.assertAlmostEqual(f.evaluate(1,2), 26, delta=1e-12)
+     
+    """Test operator-"""
+    def testoperatorminus(self):
+       f = Function.Function_constant(22) - Function.Function_constant(18)
+       self.assertAlmostEqual(4, f.evaluate(2,469), delta=1e-12)
+       f = Function.Function_constant(0) - -10
+       self.assertAlmostEqual(10, f.evaluate(12,46), delta=1e-12)
+       f = -5 - Function.Function_constant(-4)
+       self.assertAlmostEqual(-1, f.evaluate(8,46), delta=1e-12)
+       f = -Function.Function_constant(9)
+       self.assertAlmostEqual(-9, f.evaluate(-43,12), delta=1e-12)    
